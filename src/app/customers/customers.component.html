@@ -1,0 +1,60 @@
+<div class="col-md-12 tabActive">
+  <span><i class="fas fa-user"></i></span>
+  <h2 class="tabName">Customers</h2>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 badgeBox">
+      <a><span [routerLink]="['Customers',1,'none']" routerLinkActive="badge-primary" class="badge badge-light"><i class="fas fa-th-large"></i>Card
+          View</span></a>
+      <a><span routerLink="/new-customer" routerLinkActive="badge-primary" class="badge badge-light"><i class="fas fa-plus"></i>New
+          Customer</span></a>
+      <div class="filterFild">
+        <div class="form-group">
+          <label class="filter" for="exampleInputEmail1">Filter:</label>
+          <input type="text" [(ngModel)]="searchValue" class="form-control" placeholder="Search">
+          <button class="btn btn badge-info" [routerLink]="['/Customers', activePage, searchValue]">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row customers">
+    <div class="col-md-12">
+      <button class="btn btn-light" *ngIf="activeSearch" [routerLink]="['/Customers',1,'none']">Cancel Search</button>
+      <div class="card" style="width:350px;" *ngFor="let customer of customers">
+        <div class="header">
+          <h4 style="background-color: #007AF8">{{customer.name}} {{customer.surname}}<span class=edit><i class="fas fa-edit"
+                style="cursor: pointer" routerLink="/EditCustomer/{{customer._id}}/"></i></span></h4>
+        </div>
+        <img class="card-img-top imgCustomer" src="../assets/custumer.png" alt="Custamer">
+        <div class="card-body">
+          <h5 class="card-title">{{customer.city}} ,<br>{{customer.state}}</h5>
+          <a class="linkOrders" style="color: blue;" routerLink="/DetailView/{{customer._id}}">Detail View</a>
+        </div>
+      </div>
+
+      <div class="row paginationBox">
+        <div class="col-md-12 ">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item" *ngIf="pagePrevius">
+                <a class="page-link" (click)="goToPreviousPage()" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only">Previous</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" (click)="getActivePageCustomers()">{{activePage}}</a></li>
+
+              <li class="page-item" *ngIf="pageNext">
+                <a class="page-link" (click)="goToNextPage()" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>

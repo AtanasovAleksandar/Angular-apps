@@ -1,0 +1,13 @@
+.invalid label{
+    color:red;  
+}
+
+.invalid input {
+    color: red;
+    border: 1px solid red;
+    outline: red;
+}
+
+.invalid input:focus {
+   box-shadow:  0 0 5px red;
+}

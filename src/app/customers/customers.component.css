@@ -1,0 +1,103 @@
+.container {
+    margin-top: 100px;
+}
+
+.tabActive {
+    padding-left: 10%;
+    padding-top: 30px;
+}
+
+.tabName {
+    float: left;
+    padding: 0px 10px;
+    font-size: 35px;
+    font-weight: 400;
+    margin-top: 8px;
+    padding-bottom: 35px;
+}
+
+.badgeBox{
+    padding-bottom: 25px;
+}
+.fa-user {
+    font-size: 35px;
+    float: left;
+    padding: 8px 0px 0px 10px;
+}
+
+.fa-th-large {
+    padding: 0px 5px;
+    font-size: 20px;
+}
+
+.fa-plus {
+    padding: 0px 5px;
+    font-size: 20px;
+}
+
+.form-control {
+   
+    float: right;
+}
+.badge {
+    margin-left: 15px;
+    font-size: 15px;
+    padding: 5px;
+}
+.filter {
+    position: absolute;
+    right: 165px;
+    top: -25px
+}
+
+.filterFild {
+    margin-top: 0px;
+    padding-top: 1px;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+
+.card {
+    margin-left: -15px;
+    float: left;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.customers {
+    margin-left: 0px;
+    padding: 20px 10px;
+}
+.header h4 {
+    padding: 5px 10px;
+    font-weight: 500;
+}
+
+.edit {
+    float: right;
+}
+
+.paginationBox a {
+    color: #007AF8;
+}
+
+.paginationBox{
+    position: absolute;
+    bottom: -75px;
+}
+
+.card-body {
+    position: absolute;
+    width: 50%;
+    top: 30px;
+    right: 0;
+}
+
+.imgCustomer {
+    width: 40%;
+    height: 150px;
+    padding-bottom: 20px;
+    padding-left: 16px;
+}

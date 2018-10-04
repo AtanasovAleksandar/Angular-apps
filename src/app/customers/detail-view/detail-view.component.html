@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Customer Information</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 navigationMenu">
+      <button type="button" class="btn btn-light" (click)="showOrders('detail')"><i class="fas fa-list-ul"></i>Detail
+        View</button>
+      <button type="button" class="btn btn-light" (click)="showOrders('orderss')"><i class="fas fa-tag"></i> Customer
+        Orders</button>
+      <button type="button" class="btn btn-light" routerLink="/EditCustomer/{{DetailUser['_id']}}"><i class="fas fa-edit"></i>
+        Edit Customer</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card" *ngIf="orders == false">
+        <img class="card-img-top" src="/assets/custumer.png" alt="Customer img">
+        <div class="card-body">
+          <h2>{{DetailUser["name"]}} {{DetailUser["surname"]}}</h2>
+          <p class="card-text">{{DetailUser["address"]}},<br>{{DetailUser["city"]}},{{DetailUser["state"]}}</p>
+          <p class="card-text">{{DetailUser["email"]}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="orders">
+    <div class="col-md-12">
+      <h2>Orders from: {{DetailUser["name"]}} {{DetailUser["surname"]}}</h2>
+
+      <div class="ordersInfo" *ngFor="let order of DetailUser['orders']">
+        <i class="fas fa-trash-alt"></i>
+        <span class="name">{{order.name}}</span>
+        <span class="price">{{order.amount}}</span>
+      </div>
+      <span class="total">Total:{{totalamount}}</span>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Make Orders</h2>
+        <div class="form-group" [ngClass]="{'invalid': reqFilds.reqName}">
+          <label for="exampleInputEmail1">Order Name</label>
+          <input type="text" class="form-control" [(ngModel)]="addNewOrder.name" placeholder="Order Name">
+          <small *ngIf="reqFilds.reqName != ''" class="form-text text-muted" style="color: red!important;">{{reqFilds.reqName}}</small>
+        </div>
+        <div class="form-group" [ngClass]="{'invalid': reqFilds.reqAmount}">
+          <label>Price</label>
+          <input type="number" class="form-control" [(ngModel)]="addNewOrder.amount" placeholder="Price">
+          <small *ngIf="reqFilds.reqAmount != ''" class="form-text text-muted" style="color: red!important;">{{reqFilds.reqAmount}}</small>
+        </div>
+        <button type="button" class="btn btn-success" (click)="OrderNew()">Order</button>
+      </div>
+    </div>
+  </div>
+</div>

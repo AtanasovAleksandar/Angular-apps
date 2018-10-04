@@ -1,0 +1,34 @@
+.headerMenu {
+    background-color: #007AF8;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    color: #847E7E;
+    font-weight: 700;
+    background-color: white;
+}
+
+.fa-user-friends {
+    margin:6px 10px;
+    font-size: 50px;
+    float: left;
+    color: greenyellow;
+}
+
+.logo {
+    float: left;
+    color: white;
+    font-weight: 400;
+    font-size: 30px;
+    padding: 10px 10px;
+}
+
+.menu {
+    float: left;
+    padding: 10px;
+}
+
+a {
+    color: white;
+}

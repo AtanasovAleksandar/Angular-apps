@@ -1,0 +1,57 @@
+.navigationMenu button {
+    margin-right: 5px;
+}
+
+.card {
+    width: 500px;
+    height: 255px;
+    margin-top: 50px;
+}
+
+.card img {
+    width: 40%;
+    height: 200px;
+    margin: 25px 5px;
+}
+
+.card .card-body {
+    position: absolute;
+    right: 0;
+    width: 250px;
+}
+
+.name {
+    padding-left: 10px;
+}
+
+.price {
+    float: right;
+    padding-right: 10px;
+}
+
+.total {
+    float: right;
+    padding-right: 10px;
+}
+
+.ordersInfo {
+    background-color: #d1d0d0;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    height: 40px;
+    padding: 5px 0px;
+}
+
+.invalid label{
+    color:red;  
+}
+
+.invalid input {
+    color: red;
+    border: 1px solid red;
+    outline: red;
+}
+
+.invalid input:focus {
+   box-shadow:  0 0 5px red;
+}
